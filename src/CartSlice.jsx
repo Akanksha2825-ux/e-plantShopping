@@ -1,9 +1,8 @@
 // CartSlice.js
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [],
+  items: []
 };
 
 const cartSlice = createSlice({
@@ -28,9 +27,10 @@ const cartSlice = createSlice({
       if (itemToUpdate) {
         itemToUpdate.quantity = quantity;
       }
-    },
-  },
+    }
+  }
 });
 
 export const { addItem, removeItem, updateQuantity } = cartSlice.actions;
+
 export default cartSlice.reducer;
