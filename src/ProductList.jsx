@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './ProductList.css';
 import CartItem from './CartItem';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from './CartSlice'; // Adjust the import path according to your project structure
 
 function ProductList() {
     const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cart.items); // Retrieve cart items from the store
     const [showCart, setShowCart] = useState(false);
     const [addedToCart, setAddedToCart] = useState({});
 
@@ -85,6 +86,14 @@ function ProductList() {
                     cost: "$14"
                 },
                 {
+                    name: "Hyacinth",
+                    image: "https://cdn.pixabay.com/photo/2019/04/07/20/20/hyacinth-4110726_1280.jpg",
+                    description: "Beautiful flowering plant known for its fragrant.",
+                    cost: "$22"
+                }
+            ]
+        },
+        {
                     name: "Hyacinth",
                     image: "https://cdn.pixabay.com/photo/2019/04/07/20/20/hyacinth-4110726_1280.jpg",
                     description: "Beautiful flowering plant known for its fragrant.",
